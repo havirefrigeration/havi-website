@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HAVI Refrigeration & Air-Conditioning - Reliable Cooling Experts in Kenya">
+  <title>HAVI Refrigeration & AC</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .active { color: #93c5fd; font-weight: bold; }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <img src="assets/logo.png" alt="HAVI Logo" class="h-10">
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+    <div id="menu" class="hidden md:hidden bg-blue-800 flex flex-col space-y-4 p-4">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+      // Active link highlight
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 60;
+          if (scrollY >= sectionTop) current = section.getAttribute("id");
+        });
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Sections -->
+  <main class="flex-grow">
+    <section id="home" class="bg-blue-800 text-white text-center py-20">
+      <h2 class="text-4xl font-bold">Reliable Cooling & Refrigeration Experts</h2>
+      <p class="mt-4 text-lg">Chill out, we’ve got the cooling covered.</p>
+      <div class="mt-6 flex justify-center space-x-4">
+        <a href="#services" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Our Services</a>
+        <a href="#contact" class="bg-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600">Request a Quote</a>
+      </div>
+    </section>
+
+    <section id="about" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6">About Us</h2>
+      <p class="mb-6">HAVI Refrigeration and Air-Conditioning is a trusted provider of cooling solutions in Kenya. We specialize in commercial refrigeration, air-conditioning installation, and preventive maintenance.</p>
+      <p>With certified technicians and a commitment to customer satisfaction, we ensure reliable and energy-efficient systems for both businesses and homes.</p>
+    </section>
+
+    <section id="services" class="py-16 bg-gray-100">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">Our Services</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h3 class="text-xl font-semibold mb-3">Commercial Refrigeration</h3>
+            <p>Cold rooms, freezers, display units – installed and serviced.</p>
+          </div>
+          <div class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h3 class="text-xl font-semibold mb-3">Air-Conditioning</h3>
+            <p>Installation, repair, and maintenance for homes and businesses.</p>
+          </div>
+          <div class="bg-white shadow-md p-6 rounded-lg text-center">
+            <h3 class="text-xl font-semibold mb-3">Preventive Maintenance</h3>
+            <p>Regular servicing to keep your systems efficient.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">Our Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x300" alt="Supermarket Cooling System" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Supermarket Cooling System</h3>
+            <p>Installed energy-efficient refrigeration units across large areas.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x300" alt="Office AC Upgrade" class="w-full">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-blue-700">Office AC Upgrade</h3>
+            <p>Upgraded central AC system for improved comfort and reduced energy bills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">Testimonials</h2>
+      <blockquote class="p-6 bg-gray-100 rounded-lg italic shadow-md mb-6">
+        “HAVI Refrigeration did an excellent job with our cooling system. Highly recommend!”  
+        <span class="block mt-2 font-semibold">– John M.</span>
+      </blockquote>
+      <blockquote class="p-6 bg-gray-100 rounded-lg italic shadow-md">
+        “Professional team, quick service, and reliable results.”  
+        <span class="block mt-2 font-semibold">– Sarah K.</span>
+      </blockquote>
+    </section>
+
+    <section id="blog" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">Our Blog</h2>
+      <div class="space-y-8">
+        <article class="bg-gray-100 shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-blue-700">5 Tips for Maintaining Your AC</h3>
+          <p>Proper maintenance can extend the life of your air-conditioning unit...</p>
+        </article>
+        <article class="bg-gray-100 shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-2 text-blue-700">Energy-Saving Refrigeration Solutions</h3>
+          <p>Discover how HAVI Refrigeration is helping businesses cut costs...</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">Get in Touch</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <form action="https://formspree.io/f/xjkepdpj" method="POST" class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+          <input type="text" name="name" placeholder="Your Name" class="w-full border rounded-lg px-4 py-2" required>
+          <input type="email" name="email" placeholder="Your Email" class="w-full border rounded-lg px-4 py-2" required>
+          <textarea name="message" placeholder="Your Message" rows="5" class="w-full border rounded-lg px-4 py-2" required></textarea>
+          <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded-lg">Send Message</button>
+        </form>
+        <div class="space-y-4">
+          <p><strong>Email:</strong> havirefrigerationandairconditi@gmail.com</p>
+          <p><strong>Phone:</strong> +254 712 344 661</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.014065777317!2d36.8219!3d-1.2921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1734a0!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1699300000000!5m2!1sen!2ske"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-6 mt-auto">
+    <div class="flex justify-center space-x-6 mb-4">
+      <a href="https://www.facebook.com/share/1B58yCfCui/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/v._.kay?igsh=NXpiMmRoM3c1dnR3" target="_blank">Instagram</a>
+      <a href="mailto:havirefrigerationandairconditi@gmail.com">Email</a>
+    </div>
+    <p>© 2025 HAVI Refrigeration and Air-Conditioning | Built by grandzsontech</p>
+  </footer>
+
+</body>
+</html>
